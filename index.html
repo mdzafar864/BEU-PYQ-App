@@ -1,0 +1,967 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://www.googletagmanager.com; img-src 'self' data: blob: https:; style-src 'self' 'unsafe-inline'; font-src 'self' data: https:; frame-src https://drive.google.com; worker-src 'self' blob:; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests;">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+  <meta name="google-site-verification" content="o4SUX7ZbxE9gI4_-edZ2Wxp_cFjMwllnNxnvU72gkbE">
+  <meta name="google-site-verification" content="3JRj0E_NGgRfQLI_oBviyP75mB1sxccJoRSAoorQTMg"/>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K3DNQHVT90"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-K3DNQHVT90', { send_page_view: true });
+  </script>
+  <title>BEU PYQ | Bihar Engineering University Previous Year Questions</title>
+  <meta name="description" content="BEU PYQ: Previous Year Questions for Bihar Engineering University. Browse by branch, semester & subject. PWA ready.">
+  <meta name="keywords" content="BEU PYQ, Bihar Engineering University previous year questions, BEU question bank, semester wise PYQ">
+  <meta name="author" content="Md Zafar">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mdzafar864.github.io/BEU-PYQ-App/">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <meta property="og:title" content="BEU PYQ | Previous Year Questions">
+  <meta property="og:description" content="Access BEU previous year question papers by branch, semester and subject.">
+  <meta property="og:url" content="https://mdzafar864.github.io/BEU-PYQ-App/">
+  <meta property="og:image" content="https://github.com/mdzafar864/BEU-PYQ-App/blob/main/logo.png?raw=true">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0066ff">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <script>
+    const BASE = location.hostname.includes("github.io") ? "/BEU-PYQ-App" : "";
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register(`${BASE}/service-worker.js`)
+          .then(reg => console.log("✅ SW Registered"))
+          .catch(err => console.log("❌ SW Error:", err));
+      });
+    }
+  </script>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+      background: #f2f6fc;
+      padding: 16px;
+      width: 100%;
+      max-width: 1000px;
+      margin: auto;
+      min-height: 100vh;
+    }
+    .box {
+      background: white;
+      padding: 24px 20px 30px;
+      border-radius: 28px;
+      box-shadow: 0 12px 40px rgba(0, 80, 200, 0.10);
+      margin-top: 18px;
+      transition: 0.2s;
+    }
+
+    .header-center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    #logo {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 28px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      display: block;
+    }
+
+    .app-title {
+      text-align: center;
+      font-weight: 700;
+      font-size: 28px;
+      color: #0b1e3a;
+      margin-top: 6px;
+    }
+    .app-title .sub {
+      color: #0066ff;
+      font-weight: 700;
+    }
+
+    select, button {
+      width: 100%;
+      padding: 16px 14px;
+      margin-top: 12px;
+      font-size: 17px;
+      border-radius: 16px;
+      border: 1px solid #d9e2ef;
+      background: white;
+      font-weight: 500;
+      transition: 0.2s;
+    }
+    select:focus {
+      border-color: #0066ff;
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(0,102,255,0.12);
+    }
+    button {
+      background: #0066ff;
+      color: white;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,102,255,0.20);
+      transition: 0.15s;
+    }
+    button:hover { background: #0052cc; transform: scale(0.98); }
+    #devBtn { background: #2d3b4f; box-shadow: none; }
+    #installBtn { background: #16a34a; box-shadow: 0 4px 12px rgba(22,163,74,0.3); }
+    #msg {
+      margin: 16px 0 8px;
+      background: #eef5ff;
+      padding: 14px 18px;
+      border-radius: 16px;
+      font-size: 15px;
+      border-left: 5px solid #0066ff;
+      transition: 0.2s;
+    }
+    .subject-section {
+      margin-top: 28px;
+      padding: 20px 18px;
+      background: #f8fbff;
+      border-radius: 24px;
+      border: 1px solid #e6edf8;
+      transition: 0.25s;
+    }
+    .subject-section h3 {
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #0b1e3a;
+      margin-bottom: 14px;
+    }
+    .subject-section h3 span {
+      background: #0066ff10;
+      padding: 4px 12px;
+      border-radius: 40px;
+      font-size: 14px;
+      color: #0066ff;
+      font-weight: 600;
+    }
+    .subject-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 12px;
+    }
+    .subject-tag {
+      background: white;
+      padding: 8px 18px;
+      border-radius: 40px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #1a2b44;
+      border: 1px solid #dce5f2;
+      transition: 0.15s;
+      cursor: default;
+    }
+    .subject-tag:hover {
+      border-color: #0066ff;
+      background: #f0f6ff;
+      transform: translateY(-2px);
+    }
+    .empty-subjects { color: #7a8aa0; font-size: 15px; padding: 6px 0; }
+    .modal {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.5);
+      display: none; justify-content: center; align-items: center;
+      padding: 15px; z-index: 9999; backdrop-filter: blur(4px);
+    }
+    .modal.active { display: flex; }
+    .modal-box {
+      width: 100%; max-width: 600px; height: 92vh;
+      background: #fff; border-radius: 28px; overflow: hidden;
+      display: flex; flex-direction: column;
+      animation: popup .3s ease; box-shadow: 0 30px 60px rgba(0,0,0,0.25);
+    }
+    @keyframes popup { from { transform: scale(0.94); opacity:0; } to { transform:scale(1); opacity:1; } }
+    .modal-top {
+      padding: 14px 18px; background: #f1f6fd;
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 18px; font-weight: 600; flex-shrink:0;
+    }
+    .btn-group { display: flex; gap: 10px; }
+    .close-btn {
+      background: #eef2f7; color: #1e2a44; padding: 8px 18px;
+      border: none; border-radius: 40px; font-weight: 600; cursor: pointer;
+      font-size: 14px;
+    }
+    #downloadPDFBtn { background: #0066ff; color: white; }
+    iframe { width: 100%; height: 100%; flex: 1; border: 0; }
+
+    /* ============================================================
+       DEVELOPER MODAL - DESIGNED LIKE SCREENSHOT
+    ============================================================ */
+    .developer-modal {
+      max-width: 420px;
+      border-radius: 28px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.30);
+    }
+
+    .dev-header {
+      text-align: center;
+      padding: 32px 22px 28px;
+      background: linear-gradient(135deg, #0066ff, #00b4ff);
+      color: #fff;
+      position: relative;
+    }
+
+    .dev-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(255,255,255,0.20);
+      color: #fff;
+      font-size: 0;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .dev-close::before,
+    .dev-close::after {
+      content: "";
+      position: absolute;
+      width: 18px;
+      height: 3px;
+      background: white;
+      left: 50%;
+      top: 50%;
+      border-radius: 4px;
+    }
+    .dev-close::before {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+    .dev-close::after {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
+    .dev-photo-wrap {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 14px;
+      border-radius: 50%;
+      padding: 4px;
+      background: white;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .dev-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      border-radius: 50%;
+    }
+
+    .dev-header h2 {
+      margin: 4px 0 2px;
+      font-size: 26px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.5px;
+    }
+    .dev-header .dev-title {
+      font-size: 14px;
+      opacity: 0.90;
+      font-weight: 400;
+      letter-spacing: 0.3px;
+    }
+
+    /* Body - Clean card style */
+    .dev-body {
+      padding: 20px 22px 24px;
+      background: #fff;
+    }
+
+    .dev-info-item {
+      display: flex;
+      align-items: center;
+      padding: 12px 0;
+      border-bottom: 1px solid #f0f2f5;
+    }
+    .dev-info-item:last-of-type {
+      border-bottom: none;
+    }
+
+    .dev-info-label {
+      font-weight: 600;
+      color: #1a2634;
+      font-size: 15px;
+      min-width: 80px;
+    }
+
+    .dev-info-value {
+      color: #1e293b;
+      font-size: 15px;
+      word-break: break-word;
+    }
+    .dev-info-value a {
+      color: #0066ff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .dev-info-value a:hover {
+      color: #ff0000;
+      text-decoration: underline;
+    }
+
+    .dev-info-value .version-tag {
+      display: inline-block;
+      background: #e8edf5;
+      padding: 2px 14px;
+      border-radius: 40px;
+      font-size: 13px;
+      color: #1a2634;
+      font-weight: 500;
+    }
+
+    /* YouTube Button */
+    .youtube-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      margin: 16px 0 14px;
+      padding: 14px 20px;
+      background: #ff0000;
+      color: #ffffff !important;
+      text-decoration: none;
+      border-radius: 40px;
+      font-size: 16px;
+      font-weight: 700;
+      box-shadow: 0 6px 20px rgba(255, 0, 0, 0.25);
+      transition: all 0.25s ease;
+      border: none;
+      cursor: pointer;
+    }
+    .youtube-btn:hover {
+      background: #cc0000;
+      transform: scale(1.02);
+      color: #ffffff !important;
+      box-shadow: 0 8px 28px rgba(255, 0, 0, 0.35);
+    }
+    .youtube-btn svg {
+      width: 22px;
+      height: 22px;
+      fill: white;
+      flex-shrink: 0;
+    }
+
+    /* About text */
+    .dev-about {
+      text-align: center;
+      color: #475569;
+      font-size: 14px;
+      line-height: 1.6;
+      padding: 12px 0 4px;
+      border-top: 1px solid #f0f2f5;
+      margin-top: 4px;
+    }
+
+    /* Force YouTube button text white */
+    .youtube-btn:link,
+    .youtube-btn:visited,
+    .youtube-btn:hover,
+    .youtube-btn:active {
+      color: #ffffff !important;
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px 10px 10px;
+      font-size: 13px;
+      color: #4a5a72;
+      animation: footerFadeUp 1s ease forwards;
+      opacity: 0;
+    }
+    @keyframes footerFadeUp {
+      0% { opacity:0; transform:translateY(16px); }
+      100% { opacity:1; transform:translateY(0); }
+    }
+    @media (max-width: 600px) {
+      .box { padding: 16px; }
+      .subject-tag { font-size: 13px; padding: 6px 14px; }
+      .dev-photo-wrap { width: 100px; height: 100px; }
+      .developer-modal { max-width: 94vw; }
+      .dev-header h2 { font-size: 22px; }
+      .dev-info-label { min-width: 70px; font-size: 14px; }
+      .dev-info-value { font-size: 14px; }
+    }
+    a:link, a:visited { color: #0066ff; }
+    a:hover { color: #ff0000; }
+  </style>
+</head>
+<body>
+
+<div class="box">
+
+  <div class="header-center">
+    <img id="logo" loading="lazy" src="https://github.com/mdzafar864/BEU-PYQ-App/blob/main/logo.png?raw=true" alt="BEU Logo">
+    <h1 class="app-title">📘 BEU <span class="sub">PYQ</span></h1>
+  </div>
+
+  <select id="branch">
+    <option value="">Select Branch</option>
+    <option value="CE">Civil Engineering (CE)</option>
+    <option value="CS">Computer Science & Engg (CSE)</option>
+    <option value="IOT">CSE (IoT)</option>
+    <option value="EE">Electrical Engineering (EE)</option>
+    <option value="ECE">Electronics & Comm (ECE)</option>
+    <option value="ME">Mechanical Engineering (ME)</option>
+  </select>
+
+  <select id="sem">
+    <option value="">Select Semester</option>
+    <option value="1stNew">1st Semester (New)</option>
+    <option value="1stOld">1st Semester (Old)</option>
+    <option value="2ndNew">2nd Semester (New)</option>
+    <option value="2ndOld">2nd Semester (Old)</option>
+    <option value="3rdNew">3rd Semester (New)</option>
+    <option value="3rdOld">3rd Semester (Old)</option>
+    <option value="4th">4th Semester</option>
+    <option value="5th">5th Semester</option>
+    <option value="6th">6th Semester</option>
+    <option value="7th">7th Semester</option>
+    <option value="8th">8th Semester</option>
+  </select>
+
+  <select id="subjectSelect">
+    <option value="">Select Subject</option>
+  </select>
+
+  <button id="openBtn">📄 Open PYQ PDF</button>
+  <div id="msg">🔍 Choose branch, semester & subject to view PYQ.</div>
+
+  <div class="subject-section" id="subjectSection">
+    <h3>📚 Semester Subjects <span id="subjectBadge">—</span></h3>
+    <div id="subjectList" class="subject-grid">
+      <span class="empty-subjects">Select branch & semester to see subjects</span>
+    </div>
+  </div>
+
+  <button id="devBtn">👨‍💻 Developer Info</button>
+  <button id="installBtn" type="button">📲 Install App</button>
+</div>
+
+<!-- DEVELOPER MODAL - REDESIGNED LIKE SCREENSHOT -->
+<div class="modal" id="devModal">
+  <div class="modal-box developer-modal">
+    <div class="dev-header">
+      <button class="dev-close" onclick="closeDev()" aria-label="Close"></button>
+      <div class="dev-photo-wrap">
+        <img src="https://github.com/mdzafar864/BEU-PYQ-App/blob/main/Developer.png?raw=true" alt="Md Zafar" loading="lazy" class="dev-photo">
+      </div>
+      <h2>Md Zafar</h2>
+      <p class="dev-title">Full-Stack Developer · UI/UX Designer · PWA Specialist</p>
+    </div>
+
+    <div class="dev-body">
+      <!-- Email -->
+      <div class="dev-info-item">
+        <span class="dev-info-label">Email</span>
+        <span class="dev-info-value">
+          <a href="mailto:mdzafarsabour35@gmail.com">mdzafarsabour35@gmail.com</a>
+        </span>
+      </div>
+
+      <!-- LinkedIn -->
+      <div class="dev-info-item">
+        <span class="dev-info-label">LinkedIn</span>
+        <span class="dev-info-value">
+          <a href="https://www.linkedin.com/in/mdzafar864" target="_blank" rel="noopener">View Profile</a>
+        </span>
+      </div>
+
+      <!-- Version -->
+      <div class="dev-info-item">
+        <span class="dev-info-label">Version</span>
+        <span class="dev-info-value">
+          <span class="version-tag">1.0 (PWA Ready)</span>
+        </span>
+      </div>
+
+      <!-- YouTube Button with SVG Icon -->
+      <a href="https://youtube.com/@engineerspathwayofficial?si=uvPvpPB5yO424cr-"
+         target="_blank"
+         rel="noopener"
+         class="youtube-btn">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+        </svg>
+        Visit My YouTube Channel
+      </a>
+
+      <p class="dev-about">
+        This application provides fast access to BEU syllabus.<br>
+        Fully responsive, lightweight and PWA ready.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- PDF MODAL -->
+<div class="modal" id="pdfModal">
+  <div class="modal-box">
+    <div class="modal-top">
+      <span>📄 Previous Year Question</span>
+      <div class="btn-group">
+        <button class="close-btn" onclick="closePDF()">Close</button>
+        <button class="close-btn" id="downloadPDFBtn">Download</button>
+      </div>
+    </div>
+    <iframe id="pdfFrame" loading="lazy" title="PYQ PDF"></iframe>
+  </div>
+</div>
+
+<footer>© 2025 BEU PYQ · Developed by <b>Md Zafar</b></footer>
+
+<script>
+  function trackGA4Event(eventName, params = {}) {
+    if (typeof gtag === "function") gtag("event", eventName, { ...params, app_name: "BEU PYQ" });
+  }
+
+  // ================================================================
+  // PWA INSTALL PROMPT + INSTALLED CHECK
+  // ================================================================
+  let deferredPrompt = null;
+  let installInProgress = false;
+  const installBtn = document.getElementById("installBtn");
+
+  function isPWAStandalone() {
+    return window.matchMedia("(display-mode: standalone)").matches ||
+           window.matchMedia("(display-mode: fullscreen)").matches ||
+           window.navigator.standalone === true ||
+           document.referrer.startsWith("android-app://");
+  }
+
+  function updateInstallButton() {
+    if (!installBtn) return;
+    if (isPWAStandalone()) {
+      installBtn.innerHTML = "✅ App Mode Active";
+      installBtn.style.background = "#16a34a";
+      installBtn.disabled = false;
+      return;
+    }
+    if (localStorage.getItem("beu_pwa_installed") === "yes") {
+      installBtn.innerHTML = "✅ App Already Installed";
+      installBtn.style.background = "#16a34a";
+      installBtn.disabled = false;
+      return;
+    }
+    installBtn.innerHTML = "📲 Install App";
+    installBtn.style.background = "#16a34a";
+    installBtn.disabled = false;
+  }
+
+  window.addEventListener("beforeinstallprompt", (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    installInProgress = false;
+    localStorage.removeItem("beu_pwa_installed");
+    updateInstallButton();
+    trackGA4Event("pwa_install_available", {
+      install_status: "prompt_available",
+      platforms: Array.isArray(e.platforms) ? e.platforms.join(",") : "web"
+    });
+  });
+
+  let installSuccessPopupShown = false;
+  let installSuccessTimer = null;
+
+  window.addEventListener("appinstalled", () => {
+    deferredPrompt = null;
+    installInProgress = false;
+    localStorage.setItem("beu_pwa_installed", "yes");
+    updateInstallButton();
+    if (sessionStorage.getItem("ga4_pwa_installed_sent") !== "yes") {
+      sessionStorage.setItem("ga4_pwa_installed_sent", "yes");
+      trackGA4Event("pwa_installed", {
+        install_status: "success",
+        install_method: "browser_appinstalled_event"
+      });
+    }
+    clearTimeout(installSuccessTimer);
+    installSuccessTimer = setTimeout(() => {
+      if (installSuccessPopupShown) return;
+      installSuccessPopupShown = true;
+      showMessage("✅ App install successfully completed. Ab app icon se open karein.", 8000);
+    }, 8000);
+  });
+
+  async function installPWA() {
+    updateInstallButton();
+    if (isPWAStandalone()) {
+      showMessage("✅ App mode active hai. Aap installed app ke andar ho.", 6000);
+      installBtn.innerHTML = "✅ App Mode Active";
+      installBtn.style.background = "#16a34a";
+      return;
+    }
+    if (installInProgress) {
+      showMessage("⏳ App install ho raha hai...", 5000);
+      return;
+    }
+    if (localStorage.getItem("beu_pwa_installed") === "yes" && !deferredPrompt) {
+      showMessage("✅ App already installed hai. App icon se open karein.", 6000);
+      return;
+    }
+    if (!deferredPrompt) {
+      showMessage("ℹ️ Install option abhi available nahi hai. Chrome menu (⋮) se Add to Home Screen / Install App karein.", 9000);
+      return;
+    }
+    const promptEvent = deferredPrompt;
+    deferredPrompt = null;
+    installInProgress = true;
+    promptEvent.prompt();
+    const choice = await promptEvent.userChoice;
+    if (choice.outcome === "accepted") {
+      installBtn.innerHTML = "⏳ Installing...";
+      installBtn.style.background = "#16a34a";
+      showMessage("⏳ App install ho raha hai...", 15000);
+    } else {
+      installInProgress = false;
+      showMessage("❌ App install cancel ho gaya.", 5000);
+      updateInstallButton();
+    }
+  }
+
+  window.addEventListener("DOMContentLoaded", updateInstallButton);
+  window.matchMedia("(display-mode: standalone)").addEventListener("change", updateInstallButton);
+
+  document.getElementById("installBtn").addEventListener("click", () => {
+    trackGA4Event("pwa_install_button_click", {
+      button_text: installBtn.textContent.trim(),
+      prompt_available: deferredPrompt ? "yes" : "no"
+    });
+    installPWA();
+  });
+
+  // ================================================================
+  // SUBJECT DATABASE
+  // ================================================================
+  const subjectDB = {
+    "1stNew": {
+      "CE": ["Chemistry", "Mathematics-I", "Engineering Physics", "Workshop Practice", "Manufacturing Process"],
+      "CS": ["Chemistry", "Mathematics-I", "Engineering Physics", "Workshop Practice", "Manufacturing Process"],
+      "EE": ["Chemistry", "Mathematics-I", "Engineering Physics", "Workshop Practice", "Manufacturing Process"],
+      "ECE": ["Chemistry", "Mathematics-I", "Engineering Physics", "Workshop Practice", "Manufacturing Process"],
+      "ME": ["Chemistry", "Mathematics-I", "Engineering Physics", "Workshop Practice", "Manufacturing Process"],
+      "IOT": ["Chemistry", "Mathematics-I", "Engineering Physics", "Workshop Practice", "Manufacturing Process"]
+    },
+    "1stOld": {
+      "CE": ["Mathematics-I", "Physics", "Chemistry", "Basic Electrical", "Engineering Drawing"],
+      "CS": ["Mathematics-I", "Physics", "Chemistry", "Basic Electrical", "Engineering Drawing"],
+      "EE": ["Mathematics-I", "Physics", "Chemistry", "Basic Electrical", "Engineering Drawing"],
+      "ECE": ["Mathematics-I", "Physics", "Chemistry", "Basic Electrical", "Engineering Drawing"],
+      "ME": ["Mathematics-I", "Physics", "Chemistry", "Basic Electrical", "Engineering Drawing"],
+      "IOT": ["Mathematics-I", "Physics", "Chemistry", "Basic Electrical", "Engineering Drawing"]
+    },
+    "2ndNew": {
+      "CE": ["Mathematics-II", "Engineering Mechanics", "Basic Civil Engg", "Environmental Science", "Workshop"],
+      "CS": ["Mathematics-II", "Engineering Mechanics", "Basic Civil Engg", "Environmental Science", "Workshop"],
+      "EE": ["Mathematics-II", "Engineering Mechanics", "Basic Electrical", "Environmental Science", "Workshop"],
+      "ECE": ["Mathematics-II", "Engineering Mechanics", "Basic Electronics", "Environmental Science", "Workshop"],
+      "ME": ["Mathematics-II", "Engineering Mechanics", "Thermodynamics", "Environmental Science", "Workshop"],
+      "IOT": ["Mathematics-II", "Engineering Mechanics", "IoT Fundamentals", "Environmental Science", "Workshop"]
+    },
+    "2ndOld": {
+      "CE": ["Mathematics-II", "Engineering Mechanics", "Basic Civil", "EGD", "Workshop"],
+      "CS": ["Mathematics-II", "Engineering Mechanics", "Basic Civil", "EGD", "Workshop"],
+      "EE": ["Mathematics-II", "Engineering Mechanics", "BEE", "EGD", "Workshop"],
+      "ECE": ["Mathematics-II", "Engineering Mechanics", "Basic Electronics", "EGD", "Workshop"],
+      "ME": ["Mathematics-II", "Engineering Mechanics", "Thermodynamics", "EGD", "Workshop"],
+      "IOT": ["Mathematics-II", "Engineering Mechanics", "IoT Basics", "EGD", "Workshop"]
+    },
+    "3rdNew": {
+      "CE": ["Mathematics-III", "Mechanics of Solids", "Fluid Mechanics", "Surveying", "Building Materials"],
+      "CS": ["Mathematics-III", "Data Structures", "Digital Logic", "Computer Org", "Discrete Maths"],
+      "EE": ["Mathematics-III", "Network Theory", "EMF", "Electrical Machines-I", "Signals & Systems"],
+      "ECE": ["Mathematics-III", "Network Theory", "EMF", "Analog Electronics", "Signals & Systems"],
+      "ME": ["Mathematics-III", "Mechanics of Solids", "Thermodynamics", "Manufacturing", "Fluid Mechanics"],
+      "IOT": ["Mathematics-III", "IoT Architecture", "Sensors", "Embedded C", "Data Structures"]
+    },
+    "3rdOld": {
+      "CE": ["Mathematics-III", "Mechanics", "Fluid Mechanics", "Surveying", "Building Materials"],
+      "CS": ["Mathematics-III", "Data Structures", "Digital Logic", "COA", "Discrete Maths"],
+      "EE": ["Mathematics-III", "Network Theory", "EMF", "Electrical Machines", "Signals"],
+      "ECE": ["Mathematics-III", "Network Theory", "Analog Electronics", "Signals", "EMF"],
+      "ME": ["Mathematics-III", "Mechanics", "Thermodynamics", "Manufacturing", "Fluid"],
+      "IOT": ["Mathematics-III", "IoT Arch", "Sensors", "Embedded", "Data Structures"]
+    },
+    "4th": {
+      "CE": ["Mathematics-IV", "Structural Analysis", "Geotech Engg", "Hydrology", "Transportation"],
+      "CS": ["Mathematics-IV", "Algorithm", "DBMS", "Operating Systems", "Computer Networks"],
+      "EE": ["Mathematics-IV", "Power Systems", "Control Systems", "Electrical Machines-II", "Measurement"],
+      "ECE": ["Mathematics-IV", "Digital Comm", "Control Systems", "VLSI", "Communication Systems"],
+      "ME": ["Mathematics-IV", "Machine Design", "Thermal Engg", "Manufacturing-II", "Mechatronics"],
+      "IOT": ["Mathematics-IV", "IoT Protocols", "Cloud Computing", "Data Analytics", "Embedded Systems"]
+    },
+    "5th": {
+      "CE": ["Structural Design", "Foundation Engg", "Water Resources", "Environmental Engg", "Construction"],
+      "CS": ["Theory of Computation", "Compiler Design", "Software Engg", "Computer Networks", "DBMS"],
+      "EE": ["Power Electronics", "Renewable Energy", "Electrical Machines-III", "Protection", "Control"],
+      "ECE": ["Microwave", "Optical Comm", "Digital Signal Proc", "VLSI Design", "Wireless Comm"],
+      "ME": ["Heat Transfer", "Refrigeration", "Automobile", "Robotics", "Industrial Engg"],
+      "IOT": ["IoT Security", "Big Data", "Cloud", "Machine Learning", "Advanced Embedded"]
+    },
+    "6th": {
+      "CE": ["Design of Steel", "Concrete Design", "Hydraulic Engg", "Environmental-II", "Project"],
+      "CS": ["AI", "Machine Learning", "Big Data", "Cloud Computing", "Cyber Security"],
+      "EE": ["Power System-II", "High Voltage", "Smart Grid", "Electric Drives", "Renewable"],
+      "ECE": ["Embedded Systems", "IoT", "Communication Nets", "Image Processing", "Antenna"],
+      "ME": ["CAD/CAM", "Mechatronics", "Thermal-II", "Operations Research", "Project"],
+      "IOT": ["IoT Analytics", "Edge Computing", "Wireless Sensors", "AI for IoT", "Project"]
+    },
+    "7th": {
+      "CE": ["Project Management", "Earthquake Engg", "Transportation-II", "Elective", "Seminar"],
+      "CS": ["Distributed Systems", "Deep Learning", "Blockchain", "Elective", "Seminar"],
+      "EE": ["Power Plant", "Energy Audit", "Flexible AC", "Elective", "Seminar"],
+      "ECE": ["Radar", "Satellite Comm", "Nanoelectronics", "Elective", "Seminar"],
+      "ME": ["Energy Engg", "Tribology", "Production", "Elective", "Seminar"],
+      "IOT": ["IoT in Smart Cities", "Industrial IoT", "Elective", "Seminar", "Project"]
+    },
+    "8th": {
+      "CE": ["Project", "Elective-II", "Elective-III", "Seminar", "Internship"],
+      "CS": ["Project", "Elective-II", "Elective-III", "Seminar", "Internship"],
+      "EE": ["Project", "Elective-II", "Elective-III", "Seminar", "Internship"],
+      "ECE": ["Project", "Elective-II", "Elective-III", "Seminar", "Internship"],
+      "ME": ["Project", "Elective-II", "Elective-III", "Seminar", "Internship"],
+      "IOT": ["Project", "Elective-II", "Elective-III", "Seminar", "Internship"]
+    }
+  };
+
+  // ================================================================
+  // SUBJECT-WISE PDF LINKS DATABASE
+  // ================================================================
+  const pdfDB = {
+    "1stNew": {
+      "CE": {
+        "Chemistry": "https://drive.google.com/file/d/1Qd3X732fBWyEax1GTudkBWn7fpe57CgA/preview",
+        "Mathematics-I": "https://drive.google.com/file/d/1Zp-UAEgj72UstczPS_wSIBtlPU48USal/preview",
+        "Engineering Physics": "https://drive.google.com/file/d/1dZCtmM7w3H9dRpsWMlDhhJZNvFOiA1up/preview",
+        "Workshop Practice": "https://drive.google.com/file/d/14cLD5aiYQp_2U3qKN16pa7U4fowBMg3J/preview",
+        "Manufacturing Process": "https://drive.google.com/file/d/1yYB-UOYnpkOCYspJeZv83o7Rjy3wfcB8/preview"
+      },
+      "CS": {
+        "Chemistry": "https://drive.google.com/file/d/1Zp-UAEgj72UstczPS_wSIBtlPU48USal/preview",
+        "Mathematics-I": "https://drive.google.com/file/d/1Zp-UAEgj72UstczPS_wSIBtlPU48USal/preview",
+        "Engineering Physics": "https://drive.google.com/file/d/1Zp-UAEgj72UstczPS_wSIBtlPU48USal/preview",
+        "Workshop Practice": "https://drive.google.com/file/d/1Zp-UAEgj72UstczPS_wSIBtlPU48USal/preview",
+        "Manufacturing Process": "https://drive.google.com/file/d/1Zp-UAEgj72UstczPS_wSIBtlPU48USal/preview"
+      },
+      "EE": {
+        "Chemistry": "https://drive.google.com/file/d/1dZCtmM7w3H9dRpsWMlDhhJZNvFOiA1up/preview",
+        "Mathematics-I": "https://drive.google.com/file/d/1dZCtmM7w3H9dRpsWMlDhhJZNvFOiA1up/preview",
+        "Engineering Physics": "https://drive.google.com/file/d/1dZCtmM7w3H9dRpsWMlDhhJZNvFOiA1up/preview",
+        "Workshop Practice": "https://drive.google.com/file/d/1dZCtmM7w3H9dRpsWMlDhhJZNvFOiA1up/preview",
+        "Manufacturing Process": "https://drive.google.com/file/d/1dZCtmM7w3H9dRpsWMlDhhJZNvFOiA1up/preview"
+      },
+      "ECE": {
+        "Chemistry": "https://drive.google.com/file/d/14cLD5aiYQp_2U3qKN16pa7U4fowBMg3J/preview",
+        "Mathematics-I": "https://drive.google.com/file/d/14cLD5aiYQp_2U3qKN16pa7U4fowBMg3J/preview",
+        "Engineering Physics": "https://drive.google.com/file/d/14cLD5aiYQp_2U3qKN16pa7U4fowBMg3J/preview",
+        "Workshop Practice": "https://drive.google.com/file/d/14cLD5aiYQp_2U3qKN16pa7U4fowBMg3J/preview",
+        "Manufacturing Process": "https://drive.google.com/file/d/14cLD5aiYQp_2U3qKN16pa7U4fowBMg3J/preview"
+      },
+      "ME": {
+        "Chemistry": "https://drive.google.com/file/d/1yYB-UOYnpkOCYspJeZv83o7Rjy3wfcB8/preview",
+        "Mathematics-I": "https://drive.google.com/file/d/1yYB-UOYnpkOCYspJeZv83o7Rjy3wfcB8/preview",
+        "Engineering Physics": "https://drive.google.com/file/d/1yYB-UOYnpkOCYspJeZv83o7Rjy3wfcB8/preview",
+        "Workshop Practice": "https://drive.google.com/file/d/1yYB-UOYnpkOCYspJeZv83o7Rjy3wfcB8/preview",
+        "Manufacturing Process": "https://drive.google.com/file/d/1yYB-UOYnpkOCYspJeZv83o7Rjy3wfcB8/preview"
+      },
+      "IOT": {
+        "Chemistry": "https://drive.google.com/file/d/1Zp-UAEgj72UstczPS_wSIBtlPU48USal/preview",
+        "Mathematics-I": "https://drive.google.com/file/d/1Zp-UAEgj72UstczPS_wSIBtlPU48USal/preview",
+        "Engineering Physics": "https://drive.google.com/file/d/1Zp-UAEgj72UstczPS_wSIBtlPU48USal/preview",
+        "Workshop Practice": "https://drive.google.com/file/d/1Zp-UAEgj72UstczPS_wSIBtlPU48USal/preview",
+        "Manufacturing Process": "https://drive.google.com/file/d/1Zp-UAEgj72UstczPS_wSIBtlPU48USal/preview"
+      }
+    },
+    "1stOld": {
+      "CE": {
+        "Mathematics-I": "https://drive.google.com/file/d/1iRWghHRyCP6WPZ3Xoc0DdScIytir3xRn/preview",
+        "Physics": "https://drive.google.com/file/d/1iRWghHRyCP6WPZ3Xoc0DdScIytir3xRn/preview",
+        "Chemistry": "https://drive.google.com/file/d/1iRWghHRyCP6WPZ3Xoc0DdScIytir3xRn/preview",
+        "Basic Electrical": "https://drive.google.com/file/d/1iRWghHRyCP6WPZ3Xoc0DdScIytir3xRn/preview",
+        "Engineering Drawing": "https://drive.google.com/file/d/1iRWghHRyCP6WPZ3Xoc0DdScIytir3xRn/preview"
+      },
+      "CS": {
+        "Mathematics-I": "https://drive.google.com/file/d/1EHpLPUo0_7086gFmk2WRZv2fMw93Jcdb/preview",
+        "Physics": "https://drive.google.com/file/d/1EHpLPUo0_7086gFmk2WRZv2fMw93Jcdb/preview",
+        "Chemistry": "https://drive.google.com/file/d/1EHpLPUo0_7086gFmk2WRZv2fMw93Jcdb/preview",
+        "Basic Electrical": "https://drive.google.com/file/d/1EHpLPUo0_7086gFmk2WRZv2fMw93Jcdb/preview",
+        "Engineering Drawing": "https://drive.google.com/file/d/1EHpLPUo0_7086gFmk2WRZv2fMw93Jcdb/preview"
+      },
+      "EE": {
+        "Mathematics-I": "https://drive.google.com/file/d/1BtS61CEIOidszDe5FLBVQUake_8RQZlK/preview",
+        "Physics": "https://drive.google.com/file/d/1BtS61CEIOidszDe5FLBVQUake_8RQZlK/preview",
+        "Chemistry": "https://drive.google.com/file/d/1BtS61CEIOidszDe5FLBVQUake_8RQZlK/preview",
+        "Basic Electrical": "https://drive.google.com/file/d/1BtS61CEIOidszDe5FLBVQUake_8RQZlK/preview",
+        "Engineering Drawing": "https://drive.google.com/file/d/1BtS61CEIOidszDe5FLBVQUake_8RQZlK/preview"
+      },
+      "ECE": {
+        "Mathematics-I": "https://drive.google.com/file/d/1t57gqcXtYajz6p5q6FXtcBVPb-mUgX1m/preview",
+        "Physics": "https://drive.google.com/file/d/1t57gqcXtYajz6p5q6FXtcBVPb-mUgX1m/preview",
+        "Chemistry": "https://drive.google.com/file/d/1t57gqcXtYajz6p5q6FXtcBVPb-mUgX1m/preview",
+        "Basic Electrical": "https://drive.google.com/file/d/1t57gqcXtYajz6p5q6FXtcBVPb-mUgX1m/preview",
+        "Engineering Drawing": "https://drive.google.com/file/d/1t57gqcXtYajz6p5q6FXtcBVPb-mUgX1m/preview"
+      },
+      "ME": {
+        "Mathematics-I": "https://drive.google.com/file/d/1gyWaJKhhcZNmSF9WlWfqRXfnTeA87hvY/preview",
+        "Physics": "https://drive.google.com/file/d/1gyWaJKhhcZNmSF9WlWfqRXfnTeA87hvY/preview",
+        "Chemistry": "https://drive.google.com/file/d/1gyWaJKhhcZNmSF9WlWfqRXfnTeA87hvY/preview",
+        "Basic Electrical": "https://drive.google.com/file/d/1gyWaJKhhcZNmSF9WlWfqRXfnTeA87hvY/preview",
+        "Engineering Drawing": "https://drive.google.com/file/d/1gyWaJKhhcZNmSF9WlWfqRXfnTeA87hvY/preview"
+      },
+      "IOT": {
+        "Mathematics-I": "https://drive.google.com/file/d/1EHpLPUo0_7086gFmk2WRZv2fMw93Jcdb/preview",
+        "Physics": "https://drive.google.com/file/d/1EHpLPUo0_7086gFmk2WRZv2fMw93Jcdb/preview",
+        "Chemistry": "https://drive.google.com/file/d/1EHpLPUo0_7086gFmk2WRZv2fMw93Jcdb/preview",
+        "Basic Electrical": "https://drive.google.com/file/d/1EHpLPUo0_7086gFmk2WRZv2fMw93Jcdb/preview",
+        "Engineering Drawing": "https://drive.google.com/file/d/1EHpLPUo0_7086gFmk2WRZv2fMw93Jcdb/preview"
+      }
+    }
+  };
+
+  // DOM refs
+  const branchEl = document.getElementById('branch');
+  const semEl = document.getElementById('sem');
+  const subjectSelect = document.getElementById('subjectSelect');
+  const msgEl = document.getElementById('msg');
+  const subjectListEl = document.getElementById('subjectList');
+  const subjectBadge = document.getElementById('subjectBadge');
+
+  function updateSubjects() {
+    const branch = branchEl.value;
+    const sem = semEl.value;
+    subjectSelect.innerHTML = '<option value="">Select Subject</option>';
+    if (!branch || !sem) {
+      subjectListEl.innerHTML = `<span class="empty-subjects">Select branch & semester to see subjects</span>`;
+      subjectBadge.textContent = '—';
+      return;
+    }
+    const subjects = subjectDB[sem]?.[branch] || [];
+    if (subjects.length === 0) {
+      subjectListEl.innerHTML = `<span class="empty-subjects">📭 No subject list for this selection</span>`;
+      subjectBadge.textContent = '0';
+      return;
+    }
+    subjectBadge.textContent = subjects.length;
+    subjectListEl.innerHTML = subjects.map(s => `<span class="subject-tag">📖 ${s}</span>`).join('');
+    subjects.forEach(sub => {
+      const opt = document.createElement('option');
+      opt.value = sub;
+      opt.textContent = sub;
+      subjectSelect.appendChild(opt);
+    });
+  }
+
+  branchEl.addEventListener('change', updateSubjects);
+  semEl.addEventListener('change', updateSubjects);
+  updateSubjects();
+
+  let hideTimer;
+  function showMessage(text, duration = 6000) {
+    clearTimeout(hideTimer);
+    msgEl.style.opacity = 1;
+    msgEl.innerHTML = text;
+    hideTimer = setTimeout(() => {
+      msgEl.style.opacity = 0;
+      setTimeout(() => {
+        msgEl.innerHTML = "🔍 Choose branch, semester & subject to view PYQ.";
+        msgEl.style.opacity = 1;
+      }, 300);
+    }, duration);
+  }
+
+  function getPDFLink(branch, sem, subject) {
+    if (pdfDB[sem] && pdfDB[sem][branch] && pdfDB[sem][branch][subject]) {
+      return pdfDB[sem][branch][subject];
+    }
+    return null;
+  }
+
+  document.getElementById('openBtn').onclick = () => {
+    const b = branchEl.value;
+    const s = semEl.value;
+    const sub = subjectSelect.value;
+    if (!b || !s) {
+      showMessage("❌ Please select branch & semester.", 7000);
+      return;
+    }
+    if (!sub) {
+      showMessage("❌ Please select a subject from the dropdown.", 7000);
+      return;
+    }
+    const pdfLink = getPDFLink(b, s, sub);
+    if (!pdfLink) {
+      showMessage(`❌ PYQ PDF not available for "${sub}" (${b} - ${s})`, 7000);
+      return;
+    }
+    document.getElementById('pdfFrame').src = pdfLink;
+    document.getElementById('pdfModal').style.display = 'flex';
+    document.getElementById('pdfModal').classList.add('active');
+    showMessage(`📄 Opening PYQ for ${sub} (${b} - ${s})`, 5000);
+    trackGA4Event('pyq_open', { branch: b, semester: s, subject: sub });
+  };
+
+  function closePDF() {
+    document.getElementById('pdfModal').classList.remove('active');
+    document.getElementById('pdfModal').style.display = 'none';
+    document.getElementById('pdfFrame').src = '';
+  }
+
+  function closeDev() {
+    document.getElementById('devModal').classList.remove('active');
+    document.getElementById('devModal').style.display = 'none';
+  }
+
+  document.getElementById('devBtn').onclick = () => {
+    trackGA4Event('developer_info_click');
+    document.getElementById('devModal').style.display = 'flex';
+    document.getElementById('devModal').classList.add('active');
+  };
+  document.getElementById('devModal').addEventListener('click', function(e) {
+    if (e.target === this) closeDev();
+  });
+
+  document.getElementById('downloadPDFBtn').onclick = () => {
+    const pdfLink = document.getElementById('pdfFrame').src;
+    const b = branchEl.value, s = semEl.value, sub = subjectSelect.value;
+    if (!pdfLink || !b || !s) {
+      showMessage("❌ No PDF to download.", 4000);
+      return;
+    }
+    trackGA4Event('pyq_download', { branch: b, semester: s, subject: sub || 'all' });
+    const a = document.createElement('a');
+    a.href = pdfLink;
+    a.download = `${b}_${s}_${sub || 'PYQ'}.pdf`;
+    a.target = '_blank';
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    showMessage("✅ Download started!", 4000);
+  };
+</script>
+</body>
+</html>
