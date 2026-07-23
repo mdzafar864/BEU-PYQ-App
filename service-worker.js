@@ -2,7 +2,7 @@
 //  UNIVERSAL PWA SW (GitHub + Netlify)
 // =============================
 
-const CACHE_NAME = "beu-pwa-v03";
+const CACHE_NAME = "beu-pwa-v04";
 
 // 🔥 AUTO detect base path
 const BASE = self.location.hostname.includes("github.io")
@@ -16,7 +16,8 @@ const ASSETS = [
   `${BASE}/manifest.json`,
   `${BASE}/icon-192.png`,
   `${BASE}/icon-512.png`,
-  `${BASE}/logo.png`
+  `${BASE}/logo.png`,
+  `${BASE}/Developer.png`
 ];
 
 // INSTALL
