@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mdzafar864.github.io/BEU-PYQ-App/
+Sitemap: https://mdzafar864.github.io/BEU-PYQ-App/sitemap.xml
