@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Content Security Policy: compatible with GA4, Google Drive PDF previews and this PWA -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://www.googletagmanager.com; img-src 'self' data: blob: https:; style-src 'self' 'unsafe-inline'; font-src 'self' data: https:; frame-src https://drive.google.com; worker-src 'self' blob:; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests;">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+
+    <!-- Google Verification -->
+    <meta name="google-site-verification" content="o4SUX7ZbxE9gI4_-edZ2Wxp_cFjMwllnNxnvU72gkbE">
+    <meta name="google-site-verification" content="3JRj0E_NGgRfQLI_oBviyP75mB1sxccJoRSAoorQTMg" />
+
+    <!-- Google Analytics 4 (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GT-WBK5QGTJ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'GT-WBK5QGTJ', { send_page_view: true });
+    </script>
+
+    <!-- ================= SEO Meta Tags Start ================= -->
+    <title>BEU PYQ | Bihar Engineering University Previous Year Questions</title>
+
+    <meta name="description" content="BEU PYQ provides Bihar Engineering University previous year question papers for all branches, semesters, and subjects. View and download PYQ PDFs online. Mobile-friendly and PWA supported.">
+
+    <meta name="keywords" content="BEU PYQ, Bihar Engineering University previous year questions, BEU question bank, semester wise PYQ, BEU CSE PYQ, BEU Civil PYQ, BEU Mechanical PYQ, BEU Electrical PYQ, BEU ECE PYQ, BEU IoT PYQ, BEU PYQ download, BEU PYQ viewer">
+
+    <meta name="author" content="Md Zafar">
+    <meta name="developer" content="Md Zafar">
+
+    <!-- Search Engine -->
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="googlebot" content="index, follow">
+
+    <!-- Primary Canonical URL -->
+    <link rel="canonical" href="https://mdzafar864.github.io/BEU-PYQ-App/">
+
+    <!-- Favicon & PWA Icons -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon-96x96.png">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/icon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/icon-512.png">
+
+
+    <!-- Open Graph / Facebook / LinkedIn -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="BEU PYQ">
+    <meta property="og:title" content="BEU PYQ | Bihar Engineering University Previous Year Questions">
+    <meta property="og:description" content="Access BEU previous year question papers by branch, semester and subject.">
+    <meta property="og:url" content="https://mdzafar864.github.io/BEU-PYQ-App/">
+    <meta property="og:image" content="https://raw.githubusercontent.com/mdzafar864/BEU-PYQ-App/assets/icon-512.png">
+    <meta property="og:locale" content="en_IN">
+
+
+    <!-- Twitter / X Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="BEU PYQ | Previous Year Questions">
+    <meta name="twitter:description" content="Access BEU previous year question papers by branch, semester and subject.">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/mdzafar864/BEU-PYQ-App/assets/icon-512.png">
+
+    <!-- Website Schema Markup -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "BEU PYQ",
+            "alternateName": "Bihar Engineering University Previous Year Questions Viewer",
+            "url": "https://mdzafar864.github.io/BEU-PYQ-App/",
+            "description": "BEU PYQ provides Bihar Engineering University previous year question papers for all branches, semesters, and subjects.",
+            "inLanguage": "en-IN",
+            "publisher": {
+                "@type": "Person",
+                "name": "Md Zafar"
+            }
+        }
+    </script>
+    <!-- ================= SEO Meta Tags End ================= -->
+
+    <!-- PWA Manifest & Theme -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0066ff">
+
+    <!-- External Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- ================= MAIN APP CONTAINER ================= -->
+    <div class="box">
+
+        <!-- Header: Logo + Title -->
+        <div class="header-center">
+            <img id="logo" loading="lazy" src="https://raw.githubusercontent.com/mdzafar864/BEU-PYQ-App/assets/logo.png" alt="BEU Logo">
+            <h1 class="app-title">📘 BEU <span class="sub">PYQ</span></h1>
+        </div>
+
+        <!-- Branch Dropdown -->
+        <select id="branch">
+            <option value="">Select Branch</option>
+            <option value="CE">Civil Engineering (CE)</option>
+            <option value="CS">Computer Science and Engineering (CSE)</option>
+            <option value="IOT">Computer Science and Engineering (IoT)</option>
+            <option value="EE">Electrical Engineering (EE)</option>
+            <option value="ECE">Electronics and Communication (ECE)</option>
+            <option value="ME">Mechanical Engineering (ME)</option>
+        </select>
+
+        <!-- Semester Dropdown -->
+        <select id="sem">
+            <option value="">Select Semester</option>
+            <option value="1stNew">1st Semester (New)</option>
+            <option value="1stOld">1st Semester (Old)</option>
+            <option value="2ndNew">2nd Semester (New)</option>
+            <option value="2ndOld">2nd Semester (Old)</option>
+            <option value="3rdNew">3rd Semester (New)</option>
+            <option value="3rdOld">3rd Semester (Old)</option>
+            <option value="4th">4th Semester</option>
+            <option value="5th">5th Semester</option>
+            <option value="6th">6th Semester</option>
+            <option value="7th">7th Semester</option>
+            <option value="8th">8th Semester</option>
+        </select>
+
+        <!-- Subject Dropdown -->
+        <select id="subjectSelect">
+            <option value="">Select Subject</option>
+        </select>
+
+        <!-- Primary Action Button -->
+        <button id="openBtn">📄 Open PYQ PDF</button>
+
+        <!-- Message Area -->
+        <div id="msg">🔍 Choose branch, semester & subject to view PYQ.</div>
+
+        <!-- Subject Section: shows subjects for selected semester & branch -->
+        <div class="subject-section" id="subjectSection">
+            <h3>📚 Semester Subjects <span id="subjectBadge">—</span></h3>
+            <div id="subjectList" class="subject-grid">
+                <span class="empty-subjects">Select branch & semester to see subjects</span>
+            </div>
+        </div>
+
+        <!-- Utility Buttons -->
+        <button id="devBtn">👨‍💻 Developer Info</button>
+        <button id="installBtn" type="button">📲 Install App</button>
+    </div>
+
+    <!-- ================= DEVELOPER MODAL ================= -->
+    <div class="modal" id="devModal">
+        <div class="modal-box developer-modal">
+
+            <div class="dev-header">
+                <button class="dev-close" onclick="closeDev()" aria-label="Close developer info"></button>
+                <div class="dev-photo-wrap">
+                    <img src="https://raw.githubusercontent.com/mdzafar864/BEU-PYQ-App/assets/Developer.png" alt="Md Zafar" loading="lazy" class="dev-photo">
+                </div>
+                <h2>Md Zafar</h2>
+                <p class="dev-title">Full-Stack Developer · UI/UX Designer · PWA Specialist</p>
+            </div>
+
+            <div class="dev-body">
+
+                <div class="dev-info-item">
+                    <span class="dev-info-label">Email</span>
+                    <span class="dev-info-value">
+                        <a href="mailto:mdzafarsabour35@gmail.com">mdzafarsabour35@gmail.com</a>
+                    </span>
+                </div>
+
+                <div class="dev-info-item">
+                    <span class="dev-info-label">LinkedIn</span>
+                    <span class="dev-info-value">
+                        <a href="https://www.linkedin.com/in/mdzafar864" target="_blank" rel="noopener">View Profile</a>
+                    </span>
+                </div>
+
+                <div class="dev-info-item">
+                    <span class="dev-info-label">Version</span>
+                    <span class="dev-info-value">
+                        <span class="version-tag">1.0 (PWA Ready)</span>
+                    </span>
+                </div>
+
+                <!-- YouTube Link Button -->
+                <a href="https://youtube.com/@engineerspathwayofficial?si=uvPvpPB5yO424cr-" target="_blank" rel="noopener" class="youtube-btn">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                    </svg>
+                    Visit My YouTube Channel
+                </a>
+
+                <p class="dev-about">
+                    This application provides fast access to BEU PYQ.<br>
+                    Fully responsive, lightweight and PWA ready.
+                </p>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= PDF MODAL ================= -->
+    <div class="modal" id="pdfModal">
+        <div class="modal-box">
+            <div class="modal-top">
+                <span>📄 Previous Year Question</span>
+                <div class="btn-group">
+                    <button class="close-btn" onclick="closePDF()">Close</button>
+                    <button class="close-btn" id="downloadPDFBtn">Download</button>
+                </div>
+            </div>
+            <iframe id="pdfFrame" loading="lazy" title="PYQ PDF"></iframe>
+        </div>
+    </div>
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+        © 2026 BEU PYQ · Developed by <b>Md Zafar</b>
+    </footer>
+
+   
+    <!-- Application Logic: data.js contains subjects & PDF mapping; app.js handles UI interactions -->
+    <script src="js/app.js"></script>
+    <script src="js/data.js"></script>
+</body>
+</html>
