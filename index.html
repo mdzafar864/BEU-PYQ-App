@@ -147,63 +147,90 @@
             </div>
         </div>
 
-        <!-- Utility Buttons -->
-        <button id="devBtn">👨‍💻 Developer Info</button>
-        <button id="installBtn" type="button">📲 Install App</button>
+         <!-- Utility Buttons -->
+    <button id="devBtn">👨‍💻 Developer Info</button>
+    <button id="installBtn" type="button">📲 Install App</button>
     </div>
 
-    <!-- ================= DEVELOPER MODAL ================= -->
+    <!-- DEVELOPER MODAL -->
     <div class="modal" id="devModal">
-        <div class="modal-box developer-modal">
+    <div class="modal-box developer-modal">
 
-            <div class="dev-header">
-                <button class="dev-close" onclick="closeDev()" aria-label="Close developer info"></button>
-                <div class="dev-photo-wrap">
-                    <img src="https://raw.githubusercontent.com/mdzafar864/BEU-PYQ-App/main/assets/Developer.png" alt="Md Zafar" loading="lazy" class="dev-photo">
-                </div>
-                <h2>Md Zafar</h2>
-                <p class="dev-title">Full-Stack Developer · UI/UX Designer · PWA Specialist</p>
+        <!-- Header -->
+        <div class="dev-header">
+
+            <button class="dev-close"
+                type="button"
+                aria-label="Close developer info"
+                onclick="closeDev()">
+            </button>
+
+            <div class="dev-photo-wrap">
+                <img
+                    src="https://raw.githubusercontent.com/mdzafar864/Engg-Study-App/main/assets/Developer.png"
+                    alt="Md Zafar"
+                    loading="lazy"
+                    class="dev-photo">
             </div>
 
-            <div class="dev-body">
+            <h2>Md Zafar</h2>
 
-                <div class="dev-info-item">
-                    <span class="dev-info-label">Email</span>
-                    <span class="dev-info-value">
-                        <a href="mailto:mdzafarsabour35@gmail.com">mdzafarsabour35@gmail.com</a>
-                    </span>
-                </div>
+            <p>
+                <span class="dev-role">
+                    Founder of MZ Tech Solutions
+                </span>
 
-                <div class="dev-info-item">
-                    <span class="dev-info-label">LinkedIn</span>
-                    <span class="dev-info-value">
-                        <a href="https://www.linkedin.com/in/mdzafar864" target="_blank" rel="noopener">View Profile</a>
-                    </span>
-                </div>
+                <span class="dev-title">
+                    Full-Stack Developer • UI/UX Designer • PWA Specialist
+                </span>
+            </p>
 
-                <div class="dev-info-item">
-                    <span class="dev-info-label">Version</span>
-                    <span class="dev-info-value">
-                        <span class="version-tag">1.0 (PWA Ready)</span>
-                    </span>
-                </div>
-
-                <!-- YouTube Link Button -->
-                <a href="https://youtube.com/@engineerspathwayofficial?si=uvPvpPB5yO424cr-" target="_blank" rel="noopener" class="youtube-btn">
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                    </svg>
-                    Visit My YouTube Channel
-                </a>
-
-                <p class="dev-about">
-                    This application provides fast access to BEU PYQ.<br>
-                    Fully responsive, lightweight and PWA ready.
-                </p>
-
-            </div>
         </div>
+        <!-- End Header -->
+
+
+        <!-- Body -->
+        <div class="dev-body">
+
+            <div class="dev-card">
+                <b>Email</b>
+                <a href="mailto:mdzafarsabour35@gmail.com">
+                    mdzafarsabour35@gmail.com
+                </a>
+            </div>
+
+            <div class="dev-card">
+                <b>LinkedIn</b>
+                <a href="https://www.linkedin.com/in/mdzafar864"
+                    target="_blank"
+                    rel="noopener">
+                    View Profile
+                </a>
+            </div>
+
+            <div class="dev-card">
+                <b>Version</b>
+                <span>1.0 (PWA Ready)</span>
+            </div>
+
+            <a href="https://youtube.com/@engineerspathwayofficial?si=uvPvpPB5yO424cr-"
+                target="_blank"
+                rel="noopener"
+                class="youtube-btn">
+                ▶ Visit My YouTube Channel
+            </a>
+
+            <p class="dev-about">
+                This application provides fast access to Engg Study.
+                Fully responsive, lightweight, fast loading and PWA Ready.
+            </p>
+
+        </div>
+        <!-- End Body -->
+
     </div>
+</div>
+
 
     <!-- ================= PDF MODAL ================= -->
     <div class="modal" id="pdfModal">
