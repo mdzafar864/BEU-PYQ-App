@@ -222,12 +222,14 @@ iframe { width: 100%; height: 100%; flex: 1; border: 0; }
   align-items: center;
   justify-content: center;
 }
+
 .dev-photo {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-  border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
 }
 
 .dev-header h2 {
