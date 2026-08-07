@@ -157,7 +157,7 @@ button:hover { background: #0052cc; transform: scale(0.98); }
 iframe { width: 100%; height: 100%; flex: 1; border: 0; }
 
 /* ============================================================
-   DEVELOPER MODAL - DESIGNED LIKE SCREENSHOT
+   DEVELOPER MODAL 
 ============================================================ */
 .developer-modal {
   max-width: 420px;
@@ -273,6 +273,7 @@ iframe { width: 100%; height: 100%; flex: 1; border: 0; }
 
 .dev-card{
     display:flex;
+    flex-direction: row;
     justify-content:space-between;
     align-items:center;
     gap:15px;
