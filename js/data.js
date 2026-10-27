@@ -7,8 +7,7 @@ const subjectDB = {
     "CS":  ["Mathematics-I", "Physics", "Chemistry", "Programming for Problem Solving", "Workshop Practice Manufacturing", "English"],
     "EE":  ["Mathematics-I", "Physics", "Chemistry", "Programming for problam solving", "Workshop Practice Manufacturing", "English"],
     "ECE": ["Mathematics-I", "Physics", "Chemistry", "Programming for problam solving", "Workshop Practice Manufacturing", "English"],
-    "ME":  ["Mathematics-I", "Physics", "Chemistry", "Basic Electrical", "Engineering Drawing"],
-    "IOT": ["Mathematics-I", "Physics", "Chemistry", "Basic Electrical", "Engineering Drawing"]
+    "ME":  ["Mathematics-I", "Physics", "Chemistry", "Basic Electrical", "Engineering Drawing"]
     
   },
   
@@ -17,8 +16,7 @@ const subjectDB = {
     "CS": ["Mathematics-II", "Engineering Mechanics", "Basic Civil", "EGD", "Workshop"],
     "EE": ["Mathematics-II", "Engineering Mechanics", "BEE", "EGD", "Workshop"],
     "ECE": ["Mathematics-II", "Engineering Mechanics", "Basic Electronics", "EGD", "Workshop"],
-    "ME": ["Mathematics-II", "Engineering Mechanics", "Thermodynamics", "EGD", "Workshop"],
-    "IOT": ["Mathematics-II", "Engineering Mechanics", "IoT Basics", "EGD", "Workshop"]
+    "ME": ["Mathematics-II", "Engineering Mechanics", "Thermodynamics", "EGD", "Workshop"]
     
   },
   
@@ -27,8 +25,8 @@ const subjectDB = {
     "CS": ["Mathematics-III", "Data Structures", "Digital Logic", "COA", "Discrete Maths"],
     "EE": ["Mathematics-III", "Network Theory", "EMF", "Electrical Machines", "Signals"],
     "ECE": ["Mathematics-III", "Network Theory", "Analog Electronics", "Signals", "EMF"],
-    "ME": ["Mathematics-III", "Mechanics", "Thermodynamics", "Manufacturing", "Fluid"],
-    "IOT": ["Mathematics-III", "IoT Arch", "Sensors", "Embedded", "Data Structures"]
+    "ME": ["Mathematics-III", "Mechanics", "Thermodynamics", "Manufacturing", "Fluid"]
+    
   },
   
   "4th": {
@@ -44,8 +42,8 @@ const subjectDB = {
     "CS": ["Theory of Computation", "Compiler Design", "Software Engg", "Computer Networks", "DBMS"],
     "EE": ["Power Electronics", "Renewable Energy", "Electrical Machines-III", "Protection", "Control"],
     "ECE": ["Microwave", "Optical Comm", "Digital Signal Proc", "VLSI Design", "Wireless Comm"],
-    "ME": ["Heat Transfer", "Refrigeration", "Automobile", "Robotics", "Industrial Engg"],
-    "IOT": ["IoT Security", "Big Data", "Cloud", "Machine Learning", "Advanced Embedded"]
+    "ME": ["Heat Transfer", "Refrigeration", "Automobile", "Robotics", "Industrial Engg"]
+    
   },
   
   "6th": {
@@ -53,8 +51,8 @@ const subjectDB = {
     "CS": ["AI", "Machine Learning", "Big Data", "Cloud Computing", "Cyber Security"],
     "EE": ["Power System-II", "High Voltage", "Smart Grid", "Electric Drives", "Renewable"],
     "ECE": ["Embedded Systems", "IoT", "Communication Nets", "Image Processing", "Antenna"],
-    "ME": ["CAD/CAM", "Mechatronics", "Thermal-II", "Operations Research", "Project"],
-    "IOT": ["IoT Analytics", "Edge Computing", "Wireless Sensors", "AI for IoT", "Project"]
+    "ME": ["CAD/CAM", "Mechatronics", "Thermal-II", "Operations Research", "Project"]
+    
   },
   
   "7th": {
@@ -62,8 +60,8 @@ const subjectDB = {
     "CS": ["Distributed Systems", "Deep Learning", "Blockchain", "Elective", "Seminar"],
     "EE": ["Power Plant", "Energy Audit", "Flexible AC", "Elective", "Seminar"],
     "ECE": ["Radar", "Satellite Comm", "Nanoelectronics", "Elective", "Seminar"],
-    "ME": ["Energy Engg", "Tribology", "Production", "Elective", "Seminar"],
-    "IOT": ["IoT in Smart Cities", "Industrial IoT", "Elective", "Seminar", "Project"]
+    "ME": ["Energy Engg", "Tribology", "Production", "Elective", "Seminar"]
+    
   },
   
   "8th": {
@@ -71,8 +69,8 @@ const subjectDB = {
     "CS": ["Project", "Elective-II", "Elective-III", "Seminar", "Internship"],
     "EE": ["Project", "Elective-II", "Elective-III", "Seminar", "Internship"],
     "ECE": ["Project", "Elective-II", "Elective-III", "Seminar", "Internship"],
-    "ME": ["Project", "Elective-II", "Elective-III", "Seminar", "Internship"],
-    "IOT": ["Project", "Elective-II", "Elective-III", "Seminar", "Internship"]
+    "ME": ["Project", "Elective-II", "Elective-III", "Seminar", "Internship"]
+    
   }
 };
 
