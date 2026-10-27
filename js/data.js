@@ -52,7 +52,7 @@ const subjectDB = {
   },
   "4th": {
     "CE": ["Mathematics-IV", "Structural Analysis", "Geotech Engg", "Hydrology", "Transportation"],
-    "CS": ["Mathematics-IV", "Algorithm", "DBMS", "Operating Systems", "Computer Networks"],
+    "CS": ["Computer Orgnaization & Architecture", "Formal Language and Automate Theory", "Design and Analysis of Algorithms", "Database Management System", "Effective Technical Communication", "Computer Network"],
     "EE": ["Mathematics-IV", "Power Systems", "Control Systems", "Electrical Machines-II", "Measurement"],
     "ECE": ["Mathematics-IV", "Digital Comm", "Control Systems", "VLSI", "Communication Systems"],
     "ME": ["Mathematics-IV", "Machine Design", "Thermal Engg", "Manufacturing-II", "Mechatronics"],
