@@ -262,12 +262,33 @@ document.getElementById('downloadPDFBtn').onclick = () => {
 };
 
  
-// Service Worker Registration (PWA) 
-        const BASE = location.hostname.includes("github.io") ? "/BEU-PYQ-App" : "";
-        if ("serviceWorker" in navigator) {
-            window.addEventListener("load", () => {
-                navigator.serviceWorker.register(`${BASE}/service-worker.js`)
-                    .then(reg => console.log("✅ Service Worker Registered"))
-                    .catch(err => console.log("❌ Service Worker Error:", err));
-            });
-        }
+// PWA SERVICE WORKER
+const BASE = location.hostname.includes("github.io") ?
+    "/BEU-PYQ-App" :
+    "";
+
+if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+        navigator.serviceWorker.register(`${BASE}/service-worker.js`)
+            .then(registration => {
+                console.log("✅ SW Registered");
+
+                registration.onupdatefound = () => {
+                    const newWorker = registration.installing;
+
+                    newWorker.onstatechange = () => {
+                        if (newWorker.state === "installed" && navigator.serviceWorker.controller) {
+                            if (confirm("🚀 New version available! Update now?")) {
+                                newWorker.postMessage("skipWaiting");
+                            }
+                        }
+                    };
+                };
+            })
+            .catch(err => console.log("❌ SW Error:", err));
+    });
+
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+        window.location.reload();
+    });
+}
