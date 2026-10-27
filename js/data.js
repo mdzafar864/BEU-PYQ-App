@@ -32,12 +32,11 @@ const subjectDB = {
   },
   
   "4th": {
-    "CE": ["Mathematics-IV", "Structural Analysis", "Geotech Engg", "Hydrology", "Transportation"],
+    "CE": ["Transportation Engineering", "Building Planning and Drawing", "Geotechnical Engineering-1", "Hydraulic Engineering", "Structual Analysis", "Engineering Geology", "Societal & Global Impact"],
     "CS": ["Computer Orgnaization & Architecture", "Formal Language and Automate Theory", "Design and Analysis of Algorithms", "Database Management System", "Effective Technical Communication", "Computer Network"],
-    "EE": ["Mathematics-IV", "Power Systems", "Control Systems", "Electrical Machines-II", "Measurement"],
+    "EE": ["Digital Electronics", "Signals & Systems", "Electrical Machines-II", "Electromagnatic Field Therory", "Control Systems", "Enviroment Science"],
     "ECE": ["Mathematics-IV", "Digital Comm", "Control Systems", "VLSI", "Communication Systems"],
-    "ME": ["Mathematics-IV", "Machine Design", "Thermal Engg", "Manufacturing-II", "Mechatronics"],
-    "IOT": ["Mathematics-IV", "IoT Protocols", "Cloud Computing", "Data Analytics", "Embedded Systems"]
+    "ME": ["Applied Thermodynamics", "Fluid Machines", "Strength of Material", "Kinematics of Machine", "Project Management", "NPTEL-1"]
   },
   
   "5th": {
