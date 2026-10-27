@@ -33,7 +33,7 @@ const subjectDB = {
   
   "4th": {
     "CE": ["Mathematics-IV", "Structural Analysis", "Geotech Engg", "Hydrology", "Transportation"],
-    "CS": ["Computer Orgnaization & Architecture", "Formal Language and Automate Theory", "Design and Analysis of Algorithms", "Database Management System", "Effective Technical Communication", "Computer Network"],
+    "CS": ["Computer Orgaization & Architecture", "Formal Language and Automate Theory", "Design and Analysis of Algorithms", "Database Management System", "Effective Technical Communication", "Computer Network"],
     "EE": ["Mathematics-IV", "Power Systems", "Control Systems", "Electrical Machines-II", "Measurement"],
     "ECE": ["Mathematics-IV", "Digital Comm", "Control Systems", "VLSI", "Communication Systems"],
     "ME": ["Mathematics-IV", "Machine Design", "Thermal Engg", "Manufacturing-II", "Mechatronics"],
@@ -109,7 +109,7 @@ const pdfDB = {
 
   "4th": {
     "CS": {
-      "Computer Orgnaization & Architecture": "https://drive.google.com/file/d/1uFkDBpNlLVuo0Y-pp0Ikk_hir9yEQNfa/preview",
+      "Computer Orgaization & Architecture": "https://drive.google.com/file/d/1uFkDBpNlLVuo0Y-pp0Ikk_hir9yEQNfa/preview",
       "Formal Language and Automate Theory": "",
       "Design and Analysis of Algorithms": "https://drive.google.com/file/d/13OZ2sFva16vab0xrsz727YOlQnQyyZOw/preview",
       "Database Management System": "YOUR_GOOGLE_DRIVE_PREVIEW_LINK",
