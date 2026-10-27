@@ -30,11 +30,11 @@ const subjectDB = {
   },
   
   "4th": {
-    "CE": ["Transportation Engineering", "Building Planning and Drawing", "Geotechnical Engineering-1", "Hydraulic Engineering", "Structual Analysis", "Engineering Geology", "Societal & Global Impact"],
+    "CE": ["Transportation Engineering", "Building Planning and Drawing", "Geotechnical Engineering-I", "Hydraulic Engineering", "Structual Analysis", "Engineering Geology", "Societal & Global Impact"],
     "CS": ["Computer Orgnaization & Architecture", "Formal Language and Automate Theory", "Design and Analysis of Algorithms", "Database Management System", "Effective Technical Communication", "Computer Network"],
-    "EE": ["Digital Electronics", "Signals & Systems", "Electrical Machines-II", "Electromagnatic Field Therory", "Control Systems", "Enviroment Science"],
-    "ECE": ["Mathematics-IV", "Digital Comm", "Control Systems", "VLSI", "Communication Systems"],
-    "ME": ["Applied Thermodynamics", "Fluid Machines", "Strength of Material", "Kinematics of Machine", "Project Management", "NPTEL-1"]
+    "EE": ["Digital Electronics", "Signals & Systems", "Electrical Machines-II", "Electromagnatic Field Therory", "Control Systems", "Enviroment Science","NPTEL-I"],
+    "ECE": ["Anolog Electronics and IC", "Digital Circuits", "Electromagnetic Field Theory", "Anolog Comunication", "Electronics Materials & Instrumentation", "NPTEL-I"],
+    "ME": ["Applied Thermodynamics", "Fluid Machines", "Strength of Material", "Kinematics of Machine", "Project Management", "NPTEL-I"]
   },
   
   "5th": {
