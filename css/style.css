@@ -6,7 +6,7 @@ body {
   width: 100%;
   max-width: 1000px;
   margin: auto;
-  min-height: 100vh;
+  min-height: auto;
 }
 .box {
   background: white;
