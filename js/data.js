@@ -23,7 +23,7 @@ const subjectDB = {
   "3rd": {
     "CE": ["Mathematics-III", "Mechanics", "Fluid Mechanics", "Surveying", "Building Materials"],
     "CS": ["Mathematics-III", "Data Structures", "Digital Logic", "COA", "Discrete Maths"],
-    "EE": ["Mathematics-III", "Network Theory", "EMF", "Electrical Machines", "Signals"],
+    "EE": ["Electrical Circuit Analysis", "Analog Electronics", "Electrical Machine-I", "Engineering Mathematics-III", "Engineering Mechanics", "Universal Human Values"],
     "ECE": ["Mathematics-III", "Network Theory", "Analog Electronics", "Signals", "EMF"],
     "ME": ["Mathematics-III", "Mechanics", "Thermodynamics", "Manufacturing", "Fluid"]
     
