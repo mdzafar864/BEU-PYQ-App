@@ -1,9 +1,3 @@
-// data.js
-/* exported subjectDB, pdfDB, branchNames, semesterNames */
-// subjectDB[semester][branch] = [subject names]
-// pdfDB[semester][branch][subject] = Google Drive link (leave "" if not added yet)
-// Subject names in subjectDB and pdfDB must match EXACTLY.
-
 // ================================================================
 // SUBJECT DATABASE
 // ================================================================
