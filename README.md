@@ -297,5 +297,5 @@ Special thanks to
 ---
 
 <p align="center">
-© 2026 <strong>BEU PYQ</strong> · Developed by <strong>Md Zafar</strong>
+© 2026 <strong>BEU PYQ</strong> · Developed by <strong>MZ Tech Solutions</strong>
 </p>
