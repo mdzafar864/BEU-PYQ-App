@@ -25,10 +25,10 @@ const APP_VERSION = "1.0.3"; // @app-version
 // 1. CONFIG & CACHE NAMES
 // ---------------------------------------------------------
 
-// Auto-detect base path (GitHub Pages project site vs. local / custom domain)
-const BASE = self.location.hostname.includes("github.io")
-  ? "/BEU-PYQ-App"
-  : "";
+// Base path = the folder this worker is registered in, so it works on a
+// GitHub Pages project site (/repo-name), a custom domain or localhost
+// without hard-coding the repository name.
+const BASE = new URL(self.registration.scope).pathname.replace(/\/$/, "");
 
 // Unique per build -> a new build never reads or reuses an old build's shell.
 const SHELL_PREFIX = "beu-pyq-shell-";
