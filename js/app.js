@@ -734,7 +734,10 @@ if ("serviceWorker" in navigator) {
   }
 
   function onDataSignal() {
+    // A fresh change always re-arms the popup, even if the user tapped
+    // "Later" on an earlier one during this page load.
     updateState.dataAvailable = true;
+    updateState.dataPrompted = false;
     processUpdates();
   }
 
@@ -750,6 +753,23 @@ if ("serviceWorker" in navigator) {
     } else {
       postManualSync();
     }
+  }
+
+  // Direct "is there new PYQ data?" check. Posts straight to the service
+  // worker (works in every browser, unlike Background Sync which only fires
+  // once, at registration time). Used when the app is resumed, on a timer
+  // while it is open, and when the connection comes back.
+  const DATA_CHECK_MIN_GAP_MS = 60 * 1000;
+  const DATA_CHECK_INTERVAL_MS = 5 * 60 * 1000;
+  let lastDataCheck = 0;
+
+  function requestDataCheck(force) {
+    const now = Date.now();
+    if (!force && now - lastDataCheck < DATA_CHECK_MIN_GAP_MS) {
+      return;
+    }
+    lastDataCheck = now;
+    postManualSync();
   }
 
   function postManualSync() {
@@ -788,6 +808,7 @@ if ("serviceWorker" in navigator) {
         // Queue a sync now; it runs as soon as the network is available.
         navigator.serviceWorker.ready.then(() => {
           requestPYQSync();
+          requestDataCheck(true);
           requestVersionCheck();
         });
       })
@@ -815,12 +836,21 @@ if ("serviceWorker" in navigator) {
   document.addEventListener("visibilitychange", () => {
     if (document.visibilityState === "visible") {
       requestVersionCheck();
+      requestDataCheck(false);
     }
   });
+
+  // While the app stays open, keep looking for new PYQ data.
+  setInterval(() => {
+    if (document.visibilityState === "visible" && navigator.onLine) {
+      requestDataCheck(false);
+    }
+  }, DATA_CHECK_INTERVAL_MS);
 
   // Connection restored -> refresh the cache and re-check the app version
   window.addEventListener("online", () => {
     requestPYQSync();
+    requestDataCheck(true);
     lastVersionCheck = 0;
     requestVersionCheck();
   });
