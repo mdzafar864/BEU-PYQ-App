@@ -544,23 +544,20 @@ sharePDFBtn.onclick = async () => {
 };
 
 // PWA SERVICE WORKER
-const BASE = location.hostname.includes("github.io") ? "/BEU-PYQ-App" : "";
-
 if ("serviceWorker" in navigator) {
   // Was the page already controlled by a SW when it loaded?
   // (Prevents a reload / dialog on the very first visit.)
   const hadController = !!navigator.serviceWorker.controller;
   let swRegistration = null;
 
-  // Two independent update channels, each with its own boolean flags:
+  // Two independent update channels:
   //   version  <- set ONLY by a version signal (version.json "version" changed)
-  //   data     <- set ONLY by a data signal    (js/data.js content changed)
+  //   data     <- decided on the PAGE by comparing a fingerprint of js/data.js
+  //               with the one this phone/browser last showed (localStorage)
   // processUpdates() is the single place that decides which popup is shown.
   const updateState = {
     versionAvailable: false, // a newer app version exists
     versionPrompted: false, //  its popup has already been shown this page load
-    dataAvailable: false, //    new PYQ data exists
-    dataPrompted: false, //     its popup has already been shown this page load
     popupOpen: false, //        a popup is on screen right now
   };
 
@@ -575,7 +572,7 @@ if ("serviceWorker" in navigator) {
   const ICON_FILE =
     '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8"/><path d="M8 17h5"/></svg>';
 
-  function showUpdatePopup({ icon, title, message, sub, confirmText }) {
+  function showUpdatePopup({ icon, title, message, sub, confirmText, hideLater }) {
     const run = () =>
       new Promise((resolve) => {
         const overlay = document.createElement("div");
@@ -612,7 +609,11 @@ if ("serviceWorker" in navigator) {
         const okBtn = document.createElement("button");
         okBtn.type = "button";
         okBtn.className = "upd-btn-primary";
-        actions.append(laterBtn, okBtn);
+        if (hideLater) {
+          actions.append(okBtn);
+        } else {
+          actions.append(laterBtn, okBtn);
+        }
 
         card.append(iconWrap, titleEl, msgEl, subEl, actions);
         overlay.appendChild(card);
@@ -662,9 +663,9 @@ if ("serviceWorker" in navigator) {
     if (updateState.versionAvailable && !updateState.versionPrompted) {
       // Priority 1: a new app version. Its reload also loads fresh data.js.
       promptNewVersion();
-    } else if (updateState.dataAvailable && !updateState.dataPrompted) {
+    } else if (pendingData && pendingData.hash !== promptedDataHash) {
       // Priority 2: only new PYQ data, the app version is unchanged.
-      promptPYQUpdate();
+      promptPYQUpdate(pendingData);
     }
     // else: nothing to announce
   }
@@ -700,21 +701,113 @@ if ("serviceWorker" in navigator) {
   }
 
   // ----- Channel 2: PYQ data ("New PYQ Added") -----
-  function promptPYQUpdate() {
-    updateState.dataPrompted = true;
+  // Why this lives on the page and not in the service worker:
+  // on a phone the app is normally cold-started. The service worker serves
+  // data.js network-first, so a cold start already loads the NEW data and a
+  // worker-side "old vs new" comparison finds no difference -> no popup.
+  // So the page remembers, in localStorage, the fingerprint of the data it
+  // last showed. Any difference at start-up (or while the app is open)
+  // means new PYQs were added since the user last saw the app.
+  const SEEN_DATA_KEY = "beu_seen_data_hash";
+  const DATA_PAGE_URL = new URL("js/data.js", document.baseURI).href;
+  let loadedDataHash = null; //   fingerprint of the data this page is running
+  let pendingData = null; //      { kind: "info" | "refresh", hash }
+  let promptedDataHash = null; // last hash a popup was already shown for
+
+  function hashText(text) {
+    // FNV-1a 32 bit + length: tiny, fast, no secure-context requirement
+    let h = 0x811c9dc5;
+    for (let i = 0; i < text.length; i++) {
+      h ^= text.charCodeAt(i);
+      h = Math.imul(h, 0x01000193);
+    }
+    return (h >>> 0).toString(36) + "-" + text.length.toString(36);
+  }
+
+  function readSeenHash() {
+    try {
+      return localStorage.getItem(SEEN_DATA_KEY);
+    } catch {
+      return null;
+    }
+  }
+
+  function writeSeenHash(hash) {
+    try {
+      localStorage.setItem(SEEN_DATA_KEY, hash);
+    } catch {
+      // storage blocked (private mode): the popup then just won't repeat
+    }
+  }
+
+  async function fetchDataHash() {
+    const res = await fetch(`${DATA_PAGE_URL}?_=${Date.now()}`, {
+      cache: "no-store",
+    });
+    if (!res.ok) {
+      throw new Error("data fetch failed: " + res.status);
+    }
+    return hashText(await res.text());
+  }
+
+  // Runs once per page load.
+  async function initDataWatcher() {
+    try {
+      const hash = await fetchDataHash();
+      loadedDataHash = hash;
+
+      const seen = readSeenHash();
+      writeSeenHash(hash);
+
+      if (seen && seen !== hash) {
+        // New PYQs were added since the last visit. They are already loaded.
+        pendingData = { kind: "info", hash };
+        processUpdates();
+      }
+    } catch {
+      // offline / server error: try again on the next check
+    }
+  }
+
+  // Runs while the app is open (resume, timer, back online, SW signal).
+  async function checkDataNow() {
+    if (!loadedDataHash) {
+      await initDataWatcher();
+      return;
+    }
+    try {
+      const hash = await fetchDataHash();
+      if (hash !== loadedDataHash) {
+        pendingData = { kind: "refresh", hash };
+        processUpdates();
+      }
+    } catch {
+      // offline: nothing to announce
+    }
+  }
+
+  function promptPYQUpdate(notice) {
+    promptedDataHash = notice.hash;
+    pendingData = null;
     updateState.popupOpen = true;
+
+    const isInfo = notice.kind === "info";
 
     showUpdatePopup({
       icon: ICON_FILE,
       title: "PYQ Updated",
-      message: "New PYQ added, Please update.",
-      sub: "Fresh question papers have been downloaded. Refresh to see them.",
-      confirmText: "Refresh Now",
+      message: "New PYQ added!",
+      sub: isInfo
+        ? "Fresh question papers were added and are already available in the app."
+        : "Fresh question papers are available. Refresh to see them.",
+      confirmText: isInfo ? "Got it" : "Refresh Now",
+      hideLater: isInfo,
     }).then((ok) => {
       updateState.popupOpen = false;
 
-      if (ok) {
-        window.location.reload(); // re-runs js/data.js (already fresh in cache)
+      if (!isInfo && ok) {
+        writeSeenHash(notice.hash);
+        window.location.reload(); // loads the new data.js
       } else {
         processUpdates();
       }
@@ -734,11 +827,8 @@ if ("serviceWorker" in navigator) {
   }
 
   function onDataSignal() {
-    // A fresh change always re-arms the popup, even if the user tapped
-    // "Later" on an earlier one during this page load.
-    updateState.dataAvailable = true;
-    updateState.dataPrompted = false;
-    processUpdates();
+    // The worker noticed a change: let the page confirm against what it shows.
+    checkDataNow();
   }
 
   // Ask for a Background Sync (fires when connection is back, even if offline now).
@@ -755,10 +845,9 @@ if ("serviceWorker" in navigator) {
     }
   }
 
-  // Direct "is there new PYQ data?" check. Posts straight to the service
-  // worker (works in every browser, unlike Background Sync which only fires
-  // once, at registration time). Used when the app is resumed, on a timer
-  // while it is open, and when the connection comes back.
+  // "Is there new PYQ data?" check, done by the page itself so it works in
+  // every browser (Background Sync only fires once and is not on iOS).
+  // Used when the app is resumed, on a timer, and when back online.
   const DATA_CHECK_MIN_GAP_MS = 60 * 1000;
   const DATA_CHECK_INTERVAL_MS = 5 * 60 * 1000;
   let lastDataCheck = 0;
@@ -769,7 +858,7 @@ if ("serviceWorker" in navigator) {
       return;
     }
     lastDataCheck = now;
-    postManualSync();
+    checkDataNow();
   }
 
   function postManualSync() {
@@ -793,8 +882,10 @@ if ("serviceWorker" in navigator) {
   });
 
   window.addEventListener("load", () => {
+    initDataWatcher();
+
     navigator.serviceWorker
-      .register(`${BASE}/service-worker.js`)
+      .register(new URL("service-worker.js", document.baseURI).href)
       .then((registration) => {
         console.log("✅ SW Registered");
         swRegistration = registration;
@@ -808,7 +899,6 @@ if ("serviceWorker" in navigator) {
         // Queue a sync now; it runs as soon as the network is available.
         navigator.serviceWorker.ready.then(() => {
           requestPYQSync();
-          requestDataCheck(true);
           requestVersionCheck();
         });
       })
@@ -837,6 +927,14 @@ if ("serviceWorker" in navigator) {
     if (document.visibilityState === "visible") {
       requestVersionCheck();
       requestDataCheck(false);
+    }
+  });
+
+  // Phones restore pages from the back/forward cache without a reload.
+  window.addEventListener("pageshow", (event) => {
+    if (event.persisted) {
+      requestVersionCheck();
+      requestDataCheck(true);
     }
   });
 
