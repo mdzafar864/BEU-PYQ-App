@@ -200,8 +200,11 @@ const PYQData = {
   async refresh() {
     const previous = await this.cached();
 
-    // Throwing makes the browser retry the sync later.
-    const res = await fetch(DATA_URL, { cache: "no-store" });
+    // Throwing makes the browser retry the sync later. The timestamp query
+    // also skips any CDN-cached copy right after a deploy.
+    const res = await fetch(`${DATA_URL}?_=${Date.now()}`, {
+      cache: "no-store",
+    });
     if (res.status !== 200) {
       throw new Error("PYQ data fetch failed: " + res.status);
     }
