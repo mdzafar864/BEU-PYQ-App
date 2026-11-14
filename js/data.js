@@ -99,7 +99,7 @@ const pdfDB = {
       "Engineering Drawing": ""
     },
     "EE": {
-      "Mathematics-I": "",
+      "Mathematics-I": "https://drive.google.com/file/d/1JT4oVCzUF12Mr5ykoSXRiJULgocJoOKX/preview",
       "Workshop Practice Manufacturing": "https://drive.google.com/file/d/1BDCr0vZx8Bfa_MZgbUwDj6-eB-lGfIaQ/preview",
       "Chemistry": "https://drive.google.com/file/d/1wadC3d9024NoQ7KEkIJ3Y5TpB5CSnAAR/preview",
       "Programming for Problem Solving": "https://drive.google.com/file/d/1Bz_d_U5SuP4SvYoNGdAQQ7gUnEM-iQt2/preview",
