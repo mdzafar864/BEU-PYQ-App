@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <rect width="1024" height="1024" fill="#0a1a4d"/>
+  <g transform="translate(0 30)">
+    <defs><path id="p" d="M215 500C320 478 430 490 509 548L509 748C430 690 320 678 215 700Z"/></defs>
+    <g fill="#2a9d47" transform="translate(512 656) scale(1.08) translate(-512 -640)">
+      <use href="#p"/><use href="#p" transform="translate(1024 0) scale(-1 1)"/>
+    </g>
+    <g fill="#fff"><use href="#p"/><use href="#p" transform="translate(1024 0) scale(-1 1)"/></g>
+    <g fill="none" stroke="#b4c0d4" stroke-width="9" stroke-linecap="round">
+      <path d="M270 538C330 535 400 542 465 575" transform="translate(0 0)"/>
+      <path d="M270 580C330 577 400 584 465 617"/>
+      <path d="M754 538C694 535 624 542 559 575"/>
+      <path d="M754 580C694 577 624 584 559 617"/>
+    </g>
+    <path d="M372 330H652V470C652 580 372 580 372 470Z" fill="#1e7d37"/>
+    <path d="M652 470C652 580 372 580 372 470" fill="none" stroke="#fbbf24" stroke-width="14" stroke-linecap="round"/>
+    <path d="M512 190L800 315L512 440L224 315Z" fill="#38b658"/>
+    <path d="M512 315L756 332V425" fill="none" stroke="#fbbf24" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="512" cy="315" r="18" fill="#fbbf24"/>
+    <path d="M741 420H771L782 486H730Z" fill="#fbbf24"/>
+  </g>
+</svg>
