@@ -799,8 +799,8 @@ if ("serviceWorker" in navigator) {
       icon: ICON_FILE,
       title: "PYQ UPDATED",
       message:
-        "New PYQ added! Please update now to access the latest question papers.",
-      sub: "",
+        "New PYQ added, Please update.",
+      sub: "Fresh pyq content has been downloaded. Refresh to see it.",
       confirmText: "Refresh Now",
     }).then((ok) => {
       updateState.popupOpen = false;
